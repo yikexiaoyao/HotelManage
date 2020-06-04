@@ -7,7 +7,7 @@
 
 ## 项目截图
 
-### 学生/管理员登录
+### 管理员/经理/登录
 
 ![Image text](https://github.com/yikexiaoyao/HotelManage/blob/master/images/1.png)
 
@@ -27,6 +27,18 @@
 
 ![Image text](https://github.com/yikexiaoyao/HotelManage/blob/master/images/5.png)
 
+### 部分功能展示
+
+![Image text](https://github.com/yikexiaoyao/HotelManage/blob/master/images/6.png)
+
+### 部分功能展示
+
+![Image text](https://github.com/yikexiaoyao/HotelManage/blob/master/images/7.png)
+
+### 部分功能展示
+
+![Image text](https://github.com/yikexiaoyao/HotelManage/blob/master/images/8.png)
+
 ## 赞赏
 
 请作者喝杯咖啡吧！(微信号：yikexiaoyao)
@@ -39,7 +51,9 @@
 
 	git clone https://github.com/yikexiaoyao/HotelManage.git     // 把模板下载到本地
 	
-	cd HotelManage    // 进入模板目录
+	文件夹“hotelManage-vue”是前台，文件夹“hotelManage”是后台
+	
+	cd hotelManage-vue    // 进入模板目录
 	
 	npm install         // 安装项目依赖，等待安装完成之后，安装失败可用 cnpm 或 yarn
 	
