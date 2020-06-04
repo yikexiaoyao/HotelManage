@@ -11,7 +11,7 @@
 
 ![Image text](https://github.com/yikexiaoyao/HotelManage/blob/master/images/1.png)
 
-### 学生功能
+### 部分功能展示
 
 ![Image text](https://github.com/yikexiaoyao/HotelManage/blob/master/images/2.png)
 
@@ -19,7 +19,7 @@
 
 ![Image text](https://github.com/yikexiaoyao/HotelManage/blob/master/images/3.png)
 
-### 管理员功能
+### 部分功能展示
 
 ![Image text](https://github.com/yikexiaoyao/HotelManage/blob/master/images/4.png)
 
