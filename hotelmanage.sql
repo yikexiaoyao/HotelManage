@@ -11,7 +11,7 @@
  Target Server Version : 80020
  File Encoding         : 65001
 
- Date: 04/06/2020 23:02:10
+ Date: 08/06/2020 12:13:38
 */
 
 SET NAMES utf8mb4;
@@ -38,7 +38,7 @@ CREATE TABLE `bill_info`  (
   `operator` int(0) NULL DEFAULT NULL COMMENT '自',
   `details` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`bill_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of bill_info
@@ -76,7 +76,7 @@ CREATE TABLE `checkin_info`  (
   `wake` int(0) NULL DEFAULT 0,
   `order_to` int(0) NULL DEFAULT 1,
   PRIMARY KEY (`checkin_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 30 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 31 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of checkin_info
@@ -98,7 +98,7 @@ INSERT INTO `checkin_info` VALUES (26, 1, 2, 100.00, 1.00, '123123', '中华人�
 INSERT INTO `checkin_info` VALUES (27, NULL, 1, 100.00, 1.00, '123123', '中华人民共和国居民身份证', '123', '123', '2020-05-23 23:34:15', '2020-06-04 23:33:45', 123, 1, 1, NULL, NULL, 1);
 INSERT INTO `checkin_info` VALUES (28, NULL, 1, 100.00, 1.00, '123123', '中华人民共和国居民身份证', '123', '123', '2020-05-23 23:41:40', '2020-05-28 23:36:07', 123, 1, 1, NULL, NULL, 1);
 INSERT INTO `checkin_info` VALUES (29, NULL, 1, 100.00, 1.00, 'shinki123123', '中华人民共和国居民身份证', '123123', 'asdf', '2020-05-24 08:59:41', '2020-05-23 22:31:31', 12, 1, 1, 0, 0, 1);
-INSERT INTO `checkin_info` VALUES (30, 2, 16, 100.00, 1.00, '123', '中华人民共和国居民身份证', '1231233', 'asdf', '2020-05-24 09:43:58', '2020-06-23 22:31:31', 12, 1, NULL, 1, 1, 0);
+INSERT INTO `checkin_info` VALUES (30, 16, 18, 100.00, 1.00, '123', '中华人民共和国居民身份证', '1231233', 'asdf', '2020-05-24 09:43:58', '2020-06-23 22:31:31', 12, 1, NULL, 1, 1, 0);
 
 -- ----------------------------
 -- Table structure for cost_info
@@ -115,16 +115,16 @@ CREATE TABLE `cost_info`  (
   `details` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `cost_price` decimal(10, 2) NULL DEFAULT NULL,
   PRIMARY KEY (`cost_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of cost_info
 -- ----------------------------
 INSERT INTO `cost_info` VALUES (2, 2, 1, 1, 2, 1, '2020-05-24 13:57:04', '1231236151', 1.00);
-INSERT INTO `cost_info` VALUES (4, 1, 2, 2, 231, NULL, '2020-05-24 13:17:49', NULL, 1.00);
+INSERT INTO `cost_info` VALUES (4, 1, 2, 2, 231, 1, '2020-06-01 09:01:15', NULL, 1.00);
 INSERT INTO `cost_info` VALUES (6, 1, 3, 2, 2, 1, '2020-05-24 13:17:50', NULL, 1.00);
 INSERT INTO `cost_info` VALUES (7, 1, 3, 2, 4, 1, '2020-05-24 13:17:50', NULL, 1.00);
-INSERT INTO `cost_info` VALUES (8, 1, 1, 3, 1231, 1, '2020-05-24 13:17:52', NULL, 1.00);
+INSERT INTO `cost_info` VALUES (8, 1, 1, 3, 1231, 1, '2020-06-01 09:01:29', '22', 1.00);
 
 -- ----------------------------
 -- Table structure for floor_info
@@ -135,7 +135,7 @@ CREATE TABLE `floor_info`  (
   `floor_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `details` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`floor_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of floor_info
@@ -157,7 +157,7 @@ CREATE TABLE `goods_info`  (
   `unit` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `details` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`goods_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of goods_info
@@ -165,8 +165,9 @@ CREATE TABLE `goods_info`  (
 INSERT INTO `goods_info` VALUES (1, '可乐', 2, 10.00, 10.00, '个', '12333');
 INSERT INTO `goods_info` VALUES (2, '泡面', 1, 10.00, 10.00, '桶', '123');
 INSERT INTO `goods_info` VALUES (3, '宽带', 3, 123.00, 10.00, '天', NULL);
-INSERT INTO `goods_info` VALUES (4, '长城宽带', 3, 1.00, 1.00, '天', '123123');
-INSERT INTO `goods_info` VALUES (6, '垃圾食品', 1, 1.00, 1.00, '包', '垃圾食品真好吃');
+INSERT INTO `goods_info` VALUES (4, '500M宽带', 3, 1.00, 1.00, '天', '123123');
+INSERT INTO `goods_info` VALUES (6, '薯条', 1, 1.00, 1.00, '包', '123');
+INSERT INTO `goods_info` VALUES (7, '蛋糕', 1, 10.00, 1.00, '块', '123');
 
 -- ----------------------------
 -- Table structure for goods_type
@@ -177,14 +178,15 @@ CREATE TABLE `goods_type`  (
   `goods_type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `details` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`type_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of goods_type
 -- ----------------------------
 INSERT INTO `goods_type` VALUES (1, '食品', '123');
 INSERT INTO `goods_type` VALUES (2, '饮料', '123');
-INSERT INTO `goods_type` VALUES (3, '网', '123');
+INSERT INTO `goods_type` VALUES (3, '宽带', '123');
+INSERT INTO `goods_type` VALUES (4, '下午茶', '111');
 
 -- ----------------------------
 -- Table structure for log_info
@@ -197,7 +199,7 @@ CREATE TABLE `log_info`  (
   `time` datetime(0) NOT NULL ON UPDATE CURRENT_TIMESTAMP(0),
   `details` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`log_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 182 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 215 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of log_info
@@ -380,6 +382,38 @@ INSERT INTO `log_info` VALUES (179, '1', '对bill_info表更新数据 {checkin_i
 INSERT INTO `log_info` VALUES (180, '1', '对cost_info表中条件是 {cost_id=2} 数据的字段更新为 {goods_id=1, number=2, cost_price=1.00, details=1231236151, operator=1, time=Sun May 24 13:57:04 CST 2020} ', '2020-05-24 13:57:04', '操作成功');
 INSERT INTO `log_info` VALUES (181, '1', '对checin_info表更新数据 {new_room_id=2, old_room_id=1, operator=1} ', '2020-05-24 22:52:11', '操作成功');
 INSERT INTO `log_info` VALUES (182, '1', '对bill_info表更新数据 {checkin_id=26, room_id=1, deposit=100.00, checkin_price=1.00, days=12, accommodation_fee=12.00, in_store_consumption=0, real_income=12.00, income=12.00, pay_method=微信, return_money=0.0, return_deposit=100.00, operator=1} ', '2020-05-24 23:12:34', '操作成功');
+INSERT INTO `log_info` VALUES (183, '1', '对checin_info表更新数据 {new_room_id=18, old_room_id=16, operator=1} ', '2020-05-26 15:05:01', '操作成功');
+INSERT INTO `log_info` VALUES (184, '1', '对goods_info表中条件是 {goods_id=4} 数据的字段更新为 {goods_name=500M宽带, type_id=3, price=1.00, discount=1.00, unit=天, details=123123} ', '2020-05-26 20:02:25', '操作成功');
+INSERT INTO `log_info` VALUES (185, '1', '对goods_info表中条件是 {goods_id=6} 数据的字段更新为 {goods_name=薯条, type_id=1, price=1.00, discount=1.00, unit=包, details=垃圾食品真好吃} ', '2020-05-26 20:02:38', '操作成功');
+INSERT INTO `log_info` VALUES (186, '1', '对goods_info表中条件是 {goods_id=6} 数据的字段更新为 {goods_name=薯条, type_id=1, price=1.00, discount=1.00, unit=包, details=123} ', '2020-05-26 20:02:45', '操作成功');
+INSERT INTO `log_info` VALUES (187, '1', '对member_Info表中条件是 {member_id=1} 数据的字段更新为 {name=wang, sex=男, password=123, phone=4324143, address=asdf, email=2143412312@qq.com, integral=20, level=member, check_in_time=2020-05-24 13:57:04, scheduled_time=2020-05-24 13:57:04, details=123123} ', '2020-05-26 20:03:17', '操作成功');
+INSERT INTO `log_info` VALUES (188, '1', '对member_Info表中条件是 {member_id=2} 数据的字段更新为 {name=shinki, sex=女, password=123123, phone=asdf, address=123@qq.com, email=asdf12312@qq.com, integral=0, level=member, check_in_time=undefined, scheduled_time=2020-05-29, details=123124124} ', '2020-05-26 20:03:35', '操作失败');
+INSERT INTO `log_info` VALUES (189, '1', '对member_Info表中条件是 {member_id=2} 数据的字段更新为 {name=shinki, sex=女, password=123123, phone=asdf, address=123@qq.com, email=asdf12312@qq.com, integral=0, level=member, check_in_time=undefined, scheduled_time=2020-05-29, details=123124124} ', '2020-05-26 20:03:37', '操作失败');
+INSERT INTO `log_info` VALUES (190, '1', '对member_Info表插入数据 {name=1212, sex=12, password=123, phone=773123123, address=12, email=213, integral=123, level=123, check_in_time=2020-05-27, scheduled_time=2020-05-27, details=123} ', '2020-05-27 11:56:21', '操作成功');
+INSERT INTO `log_info` VALUES (191, '1', '对member_Info表中条件是 {member_id=3} 数据的字段更新为 {name=1212, sex=12, password=123, phone=13952727188, address=12, email=213, integral=123, level=123, check_in_time=2020-05-27 00:00:00, scheduled_time=2020-05-27 00:00:00, details=123} ', '2020-05-27 11:57:24', '操作成功');
+INSERT INTO `log_info` VALUES (192, '1', '对member_Info表插入数据 {name=1212, sex=12, password=123, phone=13902891823, address=12, email=213, integral=123, level=123, check_in_time=2020-05-27, scheduled_time=2020-05-27, details=123} ', '2020-05-27 11:57:41', '操作成功');
+INSERT INTO `log_info` VALUES (193, '1', '对member_Info表中条件是 {member_id=4} 数据的字段更新为 {name=1212, sex=12, password=123, phone=777902891823, address=12, email=213, integral=123, level=123, check_in_time=2020-05-27 00:00:00, scheduled_time=2020-05-27 00:00:00, details=123} ', '2020-05-27 11:58:05', '操作成功');
+INSERT INTO `log_info` VALUES (194, '1', '对member_Info表插入数据 {name=sissi, sex=女, password=123, phone=66424243, address=南京, email=34, integral=43, level=43, check_in_time=2020-05-27, scheduled_time=2020-05-27, details=11} ', '2020-05-27 16:57:06', '操作成功');
+INSERT INTO `log_info` VALUES (195, '1', '对member_Info表条件是 5 的数据进行删除  ', '2020-05-27 16:57:14', '操作成功');
+INSERT INTO `log_info` VALUES (196, '1', '对member_Info表条件是 4 的数据进行删除  ', '2020-05-27 16:57:16', '操作成功');
+INSERT INTO `log_info` VALUES (197, '1', '对member_Info表条件是 3 的数据进行删除  ', '2020-05-27 16:57:18', '操作成功');
+INSERT INTO `log_info` VALUES (198, '1', '对member_Info表插入数据 {name=zhang anna, sex=女, address=香港} ', '2020-05-28 10:05:46', '操作失败');
+INSERT INTO `log_info` VALUES (199, '1', '对member_Info表插入数据 {name=zhang anna, sex=女, address=香港} ', '2020-05-28 10:05:53', '操作失败');
+INSERT INTO `log_info` VALUES (200, '1', '对member_Info表插入数据 {name=zhang anna, sex=女, address=香港} ', '2020-05-28 10:05:56', '操作失败');
+INSERT INTO `log_info` VALUES (201, '1', '对member_Info表插入数据 {name=zhang anna, sex=女, phone=231, address=香港, email=123, integral=123, level=123, check_in_time=123, scheduled_time=123, details=123} ', '2020-05-28 10:06:08', '操作失败');
+INSERT INTO `log_info` VALUES (202, '1', '对member_Info表插入数据 {name=zhang, sex=女, phone=231, address=香港, email=123, integral=123, level=123, check_in_time=123, scheduled_time=123, details=123} ', '2020-05-28 10:06:19', '操作失败');
+INSERT INTO `log_info` VALUES (203, '1', '对member_Info表插入数据 {name=zhang, sex=女, phone=231, address=香港, email=123, integral=123, level=123, check_in_time=123, scheduled_time=123, details=123} ', '2020-05-28 10:06:20', '操作失败');
+INSERT INTO `log_info` VALUES (204, '1', '对member_Info表插入数据 {name=zhang, sex=女, phone=231, address=香港, email=123, integral=123, level=123, check_in_time=123, scheduled_time=123, details=123} ', '2020-05-28 10:06:24', '操作失败');
+INSERT INTO `log_info` VALUES (205, '1', '对member_Info表插入数据 {name=zhang, sex=女, phone=231, address=香港, email=123, integral=123, level=123, check_in_time=123, scheduled_time=123, details=123} ', '2020-05-28 10:06:27', '操作失败');
+INSERT INTO `log_info` VALUES (206, '1', '对member_Info表插入数据 {name=zhang, sex=女, phone=231, address=香港, email=123, integral=123, level=123, check_in_time=123, scheduled_time=123, details=123} ', '2020-05-28 10:06:33', '操作失败');
+INSERT INTO `log_info` VALUES (207, '1', '对member_Info表插入数据 {name=zhang, sex=女, phone=231, address=香港, email=123, integral=123, level=123, check_in_time=123, scheduled_time=123, details=123} ', '2020-05-28 10:06:34', '操作失败');
+INSERT INTO `log_info` VALUES (208, '1', '对goods_type表中条件是 {type_id=3} 数据的字段更新为 {goods_type=宽带, details=123} ', '2020-06-01 08:56:21', '操作成功');
+INSERT INTO `log_info` VALUES (209, '1', '对goods_type表中条件是 {type_id=3} 数据的字段更新为 {goods_type=宽带, details=123} ', '2020-06-01 08:56:22', '操作成功');
+INSERT INTO `log_info` VALUES (210, '1', '对goods_type表插入数据 {goods_type=下午茶, details=111} ', '2020-06-01 08:56:38', '操作成功');
+INSERT INTO `log_info` VALUES (211, '1', '对goods_info表插入数据 {goods_name=蛋糕, type_id=1, price=10.00, discount=1.00, unit=块, details=123} ', '2020-06-01 08:57:34', '操作成功');
+INSERT INTO `log_info` VALUES (212, '1', '对member_Info表中条件是 {member_id=2} 数据的字段更新为 {name=zhang, sex=女, password=123123, phone=asdf, address=123@qq.com, email=cutezhangq12312@qq.com, integral=0, level=member, check_in_time=undefined, scheduled_time=undefined, details=123124124} ', '2020-06-01 08:58:17', '操作失败');
+INSERT INTO `log_info` VALUES (213, '1', '对member_Info表中条件是 {member_id=2} 数据的字段更新为 {name=zhang, sex=女, password=123123, phone=asdf, address=123@qq.com, email=cutezhangq12312@qq.com, integral=0, level=member, check_in_time=2020-06-01, scheduled_time=2020-06-01, details=123124124} ', '2020-06-01 08:58:26', '操作成功');
+INSERT INTO `log_info` VALUES (214, '1', '对cost_info表中条件是 {cost_id=8                } 数据的字段更新为 {checkin_id=1                , room_id=1                , goods_id=3                , number=1231                , time=Mon Jun 01 09:01:29 CST 2020, details=22, operator=1} ', '2020-06-01 09:01:29', '操作成功');
 
 -- ----------------------------
 -- Table structure for member_info
@@ -399,13 +433,13 @@ CREATE TABLE `member_info`  (
   `scheduled_time` datetime(0) NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP(0),
   `details` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`member_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of member_info
 -- ----------------------------
-INSERT INTO `member_info` VALUES (1, 'asdf', '男', 'asdf', 'asdf', 'asdf', 'asdf12312@qq.com', 20, 'member', '2020-05-24 13:57:04', '2020-05-24 13:57:04', '123123');
-INSERT INTO `member_info` VALUES (2, 'shinki', '女', '123123', 'asdf', '123@qq.com', 'asdf12312@qq.com', 0, 'member', NULL, NULL, '123124124');
+INSERT INTO `member_info` VALUES (1, 'wang', '男', '123', '4324143', 'asdf', '2143412312@qq.com', 14680, 'vip', '2020-06-01 09:01:29', '2020-06-01 09:01:29', '123123');
+INSERT INTO `member_info` VALUES (2, 'zhang', '女', '123123', 'asdf', '123@qq.com', 'cutezhangq12312@qq.com', 0, 'member', '2020-06-01 00:00:00', '2020-06-01 00:00:00', '123124124');
 
 -- ----------------------------
 -- Table structure for order_info
@@ -427,7 +461,7 @@ CREATE TABLE `order_info`  (
   `order_status` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '正常',
   `details` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`order_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of order_info
@@ -466,7 +500,7 @@ CREATE TABLE `room_info`  (
   `vip_price` decimal(10, 2) NOT NULL,
   `details` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`room_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of room_info
@@ -485,8 +519,8 @@ INSERT INTO `room_info` VALUES (12, 1, '入住', 1, 1.00, 1.00, 1.00, 1.00, '1')
 INSERT INTO `room_info` VALUES (13, 1, '入住', 1, 1.00, 1.00, 1.00, 1.00, '1');
 INSERT INTO `room_info` VALUES (14, 1, '入住', 1, 1.00, 1.00, 1.00, 1.00, '1');
 INSERT INTO `room_info` VALUES (15, 1, '入住', 1, 1.00, 1.00, 1.00, 1.00, '1');
-INSERT INTO `room_info` VALUES (16, 1, '入住', 1, 12312.00, 12312.00, 12312.00, 12312.00, 'awdawdawd123123123123123');
-INSERT INTO `room_info` VALUES (18, 1, '空房', 1, 123.00, 123.00, 123.00, 123.00, NULL);
+INSERT INTO `room_info` VALUES (16, 1, '空房', 1, 12312.00, 12312.00, 12312.00, 12312.00, 'awdawdawd123123123123123');
+INSERT INTO `room_info` VALUES (18, 1, '入住', 1, 123.00, 123.00, 123.00, 123.00, NULL);
 
 -- ----------------------------
 -- Table structure for room_type
@@ -497,15 +531,18 @@ CREATE TABLE `room_type`  (
   `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `number` int(0) NOT NULL DEFAULT 0,
   `details` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `room_type_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`room_type_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of room_type
 -- ----------------------------
-INSERT INTO `room_type` VALUES (1, '\"单人床\",', 12, '123123');
-INSERT INTO `room_type` VALUES (2, '大床房', 2, '舒服');
-INSERT INTO `room_type` VALUES (4, '123', 1, '123');
+INSERT INTO `room_type` VALUES (1, '单人房', 12, '123123', NULL);
+INSERT INTO `room_type` VALUES (2, '大床房', 2, '舒服', NULL);
+INSERT INTO `room_type` VALUES (3, '双人房', 1, '123', NULL);
+INSERT INTO `room_type` VALUES (4, '母婴房', 2, '123', NULL);
+INSERT INTO `room_type` VALUES (5, '贵宾房', 2, '123', NULL);
 
 -- ----------------------------
 -- Table structure for user_info
@@ -518,58 +555,13 @@ CREATE TABLE `user_info`  (
   `authority` int(0) NOT NULL,
   `details` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`user_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 51 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of user_info
 -- ----------------------------
-INSERT INTO `user_info` VALUES (1, 'admin', '123456', 1, 'xxxx');
-INSERT INTO `user_info` VALUES (4, '123', '123', 1, 'xxxx');
-INSERT INTO `user_info` VALUES (6, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (7, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (8, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (9, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (10, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (11, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (12, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (13, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (14, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (15, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (16, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (17, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (18, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (19, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (20, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (21, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (22, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (23, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (24, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (25, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (26, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (27, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (28, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (29, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (30, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (31, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (32, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (33, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (34, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (35, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (36, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (37, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (38, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (39, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (40, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (41, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (42, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (43, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (44, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (45, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (46, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (47, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (48, '123', '123', 1, '123123');
-INSERT INTO `user_info` VALUES (49, 'admin', '123123', 1, '1231231wewafasdf');
-INSERT INTO `user_info` VALUES (50, '戎漩', '123123', 1, 'xxxx123123');
-INSERT INTO `user_info` VALUES (51, 'admin', '123456', 1, 'xxxx');
+INSERT INTO `user_info` VALUES (1, 'admin', '123456', 1, '超级管理员');
+INSERT INTO `user_info` VALUES (2, 'zq', '123', 2, '经理');
+INSERT INTO `user_info` VALUES (3, 'liu', '123', 3, '前台');
 
 SET FOREIGN_KEY_CHECKS = 1;
